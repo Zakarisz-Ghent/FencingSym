@@ -19,6 +19,7 @@ public int lungeCD;
 public int lunge;
 public BufferedImage pic;
 private Point target;
+//constructor
 public Blade(int length, int speed, Point handle, int block, int lunge, BufferedImage pic) {
 	super();
 	this.length = length;
@@ -31,7 +32,8 @@ public Blade(int length, int speed, Point handle, int block, int lunge, Buffered
 	YSpeed=0;
 	line=new Line2D.Double(tip, handle);
 }
-//sets the location of target for balde movement
+//sets the location of target for balde movement using algorithm based upon blade length 
+
 public void setTarget(Point mouse){
 	double dis=Math.sqrt((tip.x-mouse.x)*(tip.x-mouse.x)+(tip.y-mouse.y)*(tip.y-mouse.y));
 	if(dis<length){
@@ -111,6 +113,8 @@ void move(Point target){
 		}
 	}
 }
+//getters and setters
+//5/30/18
 public int getSpeed() {
 	return Speed;
 }
